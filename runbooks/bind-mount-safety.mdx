@@ -1,0 +1,20 @@
+---
+title: Bind Mount Safety
+description: How to verify that bind mounts are overlaying, not deleting, original content.
+---
+
+## Safe verification pattern
+Use an isolated mount namespace, unmount the bind target there, and inspect the underlying directory.
+
+```bash
+sudo unshare -m bash -lc '
+  mount --make-rprivate /
+  umount /home/moodmnky/.openclaw/workspace/obsidian-mnky
+  umount /home/moodmnky/.openclaw/workspace/workspaces
+  ls -la /home/moodmnky/.openclaw/workspace/obsidian-mnky
+  ls -la /home/moodmnky/.openclaw/workspace/workspaces
+'
+```
+
+## Rule
+Never assume a bind mount deleted data until you inspect the underlying directory.

@@ -1,0 +1,20 @@
+---
+title: Architecture
+description: How Obsidian, NFS, Supabase, n8n, and the agents fit together.
+---
+
+## Layers
+- **Obsidian**: durable knowledge, handoffs, and notes.
+- **NFS**: shared file plane for vaults, workspaces, and artifacts.
+- **Supabase**: structured application state.
+- **n8n**: automation and workflow orchestration.
+- **OpenAI / Ollama**: reasoning and execution.
+- **Mintlify**: polished documentation front door.
+
+## Rule of thumb
+Keep secrets and mutable app state out of NFS. Keep durable human-readable knowledge in the vault.
+
+## Layout model
+- `/mnt/nfs/hyper-mnky/mnky-agent-nfs` = system-wide storage root
+- `/home/moodmnky/.openclaw/workspace/obsidian-mnky` = user-facing vault bind mount
+- `/home/moodmnky/.openclaw/workspace/workspaces` = user-facing workspaces bind mount

@@ -1,0 +1,15 @@
+---
+title: NFS Storage
+description: The shared storage root and its bind-mounted agent-facing paths.
+---
+
+## Root mount
+- Source: `10.0.0.5:/mnt/HYPER-MNKY/mnky-agent-nfs`
+- Local mount: `/mnt/nfs/hyper-mnky/mnky-agent-nfs`
+
+## Bound paths
+- Vault: `/home/moodmnky/.openclaw/workspace/obsidian-mnky`
+- Workspaces: `/home/moodmnky/.openclaw/workspace/workspaces`
+
+## Safety
+Bind mounts overlay paths; they do not delete the directories underneath.

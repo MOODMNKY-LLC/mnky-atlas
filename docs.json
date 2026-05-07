@@ -1,0 +1,72 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "sequoia",
+  "name": "MNKY Atlas",
+  "description": "Source-of-truth documentation for the MNKY agent ecosystem.",
+  "colors": {
+    "primary": "#166E3F",
+    "light": "#26BD6C",
+    "dark": "#0F4026"
+  },
+  "favicon": "/favicon.ico",
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "navigation": {
+    "global": {
+      "anchors": [
+        {"anchor": "Home", "icon": "house", "href": "/"},
+        {"anchor": "Changelog", "icon": "scroll-text", "href": "/changelog"},
+        {"anchor": "Help", "icon": "life-buoy", "href": "https://www.mintlify.com/docs/contact-support"}
+      ]
+    },
+    "directory": "card",
+    "groups": [
+      {
+        "group": "Overview",
+        "icon": "compass",
+        "expanded": true,
+        "pages": ["overview/quickstart", "overview/architecture"]
+      },
+      {
+        "group": "Agents",
+        "icon": "bot",
+        "expanded": true,
+        "pages": ["agents/workspaces"]
+      },
+      {
+        "group": "Storage",
+        "icon": "database",
+        "expanded": true,
+        "pages": ["storage/nfs", "runbooks/bind-mount-safety"]
+      },
+      {
+        "group": "Hosts",
+        "icon": "server",
+        "expanded": true,
+        "pages": ["hosts/index", "hosts/openclaw-hq", "hosts/sage-mnky", "hosts/code-mnky", "hosts/casa-mnky", "hosts/poke-mnky"]
+      },
+      {
+        "group": "Changelog",
+        "icon": "scroll-text",
+        "expanded": true,
+        "pages": ["changelog"]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [],
+    "primary": {
+      "type": "button",
+      "label": "GitHub repo",
+      "href": "https://github.com/MOODMNKY-LLC/mnky-atlas"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+---
+title: MNKY Atlas
+description: Shared docs for the MNKY agent ecosystem, storage, hosts, and operating conventions.
+mode: frame
+---
+
+<div className="flex w-full flex-col gap-8 max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-10 lg:gap-14 lg:py-16">
+  <div className="flex max-w-[700px] flex-col gap-2 self-center text-center">
+    <h1 className="text-[30px] font-medium leading-9 tracking-tight text-gray-900 dark:text-gray-50">
+      MNKY Atlas
+    </h1>
+    <p className="text-balance text-base leading-relaxed tracking-tight text-gray-600 dark:text-gray-400">
+      The curated front door for how the MNKY agents, hosts, storage, and runbooks fit together.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <Card title="Overview" icon="compass" href="/overview/quickstart" className="border">
+      Start here to understand the docs model and the role of the atlas.
+    </Card>
+    <Card title="Agents" icon="bot" href="/agents/workspaces" className="border">
+      Learn how each agent maps to its workspace and shared vault path.
+    </Card>
+    <Card title="Storage" icon="database" href="/storage/nfs" className="border">
+      See the NFS root, bind mounts, and the safety rules around them.
+    </Card>
+    <Card title="Hosts" icon="server" href="/hosts/index" className="border">
+      Review the host-by-host integration notes and rollout status.
+    </Card>
+  </div>
+</div>
