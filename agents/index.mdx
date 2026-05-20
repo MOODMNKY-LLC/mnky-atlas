@@ -1,0 +1,87 @@
+---
+title: Agents
+sidebarTitle: Agents
+description: Host-and-harness profiles, fleet topology, and operational context for the MNKY agent estate.
+---
+
+# Agents
+
+The agent section is the operating map for the MNKY ecosystem.
+
+It explains who the agents are, where they run, what they control, which skills they use, and how the docs surface fits into the datacenter and the company.
+
+## Ecosystem view
+
+- **MASTER MOOD** is the orchestrator and fleet hub.
+- **DEVOPS MNKY** is the personal operator layer on Simeon's workstation.
+- **MOOD, SAGE, and CODE** are the core service planes for brand, research, and development.
+- **CASA, EDGE, and POKE** are extended or specialized planes with narrower responsibilities.
+- **Skills** are the reusable capability library.
+- **Agent pages** are the machine cards: host, harness, gateway, specs, runtime, skills, and core files.
+
+## How it functions
+
+- A request enters through a gateway host like `https://master.agents.moodmnky.com` or `https://devops.agents.moodmnky.com`.
+- The harness (`openclaw` in this fleet) routes runtime execution, session state, and tool access.
+- The host page records the machine identity, networking, hardware, and guest surfaces.
+- The skills registry supplies the reusable capability docs that can be linked, retrieved, or installed.
+- The docs layer is the durable map so humans and agents stop re-discovering the same topology.
+
+## What lives here
+
+- Host identity and hardware inventory
+- Networking and gateway URL
+- Runtime and harness profile
+- Guest/VM/CT surfaces where applicable
+- Core files: `AGENTS.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, `TOOLS.md`, `HEARTBEAT.md`
+- Linked skills and operational notes
+- Capture notes when a field is still live-only or incomplete
+
+## How to use it
+
+- Use agent pages when you need the full host and runtime profile.
+- Use the Skills registry when you need reusable capability docs.
+- Use this landing page when you want the big-picture fleet shape before drilling into one node.
+
+## Build-out priorities
+
+- Add live inventory capture for every agent and keep it current.
+- Add a comparison page for CPU, memory, storage, and OS across the fleet.
+- Add a gateway directory or health matrix if you want a quick operational dashboard.
+- Add service/guest cross-links from each agent to the systems it owns.
+- Add a release or change log for agent topology changes.
+
+## Quick roster
+
+<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <Card title="MASTER MOOD" icon="server" href="/agents/master-mood" className="border">
+      Central orchestrator. Oversees MOOD MNKY, SAGE MNKY, CODE MNKY, and manages EDGE, CASA, and POKE.
+    </Card>
+    <Card title="DEVOPS MNKY" icon="server" href="/agents/devops-mnky" className="border">
+      Simeon's personal day-to-day virtual assistant on the home/workstation computer.
+    </Card>
+    <Card title="MOOD MNKY" icon="server" href="/agents/mood-mnky" className="border">
+      Brand/product/ecommerce-oriented agent host.
+    </Card>
+    <Card title="SAGE MNKY" icon="server" href="/agents/sage-mnky" className="border">
+      Reflection, community, and research-oriented agent host.
+    </Card>
+    <Card title="CODE MNKY" icon="server" href="/agents/code-mnky" className="border">
+      Development, automation, and DevOps-oriented agent host.
+    </Card>
+    <Card title="CASA MNKY" icon="server" href="/agents/casa-mnky" className="border">
+      Host-local managing agent.
+    </Card>
+    <Card title="EDGE MNKY" icon="server" href="/agents/edge-mnky" className="border">
+      Reachable remotely over NetBird. Treat remote NetBird address as alternate endpoint.
+    </Card>
+    <Card title="POKE MNKY" icon="server" href="/agents/poke-mnky" className="border">
+      Pokemon/family/kid-friendly specialized agent host.
+    </Card>
+</div>
+
+## Related registries
+
+- [Skills](/skills/index)
+- [Host notes](/hosts/index)
+- [Agent catalog](/agents/catalog)

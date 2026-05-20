@@ -1,0 +1,119 @@
+---
+title: MOOD MNKY
+description: Brand/product/ecommerce-oriented agent host.
+---
+
+# MOOD MNKY
+
+Brand, product, and ecommerce agent host.
+
+## Identity
+
+- Hostname: `MOOD-MNKY`
+- IP: `10.1.0.111`
+- Gateway host: `https://mood.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime: `MOOD MNKY`
+- Runtime ID: `rt_mood_mnky`
+- Primary agent: `MOOD MNKY`
+- Team type: `core`
+- Role: `core_agent_host`
+- Status: `online`
+- Created at: `2024-01-15T00:00:00.000Z`
+
+## Networking
+
+- Primary endpoint: `http://10.1.0.111:18789`
+- Gateway host: `https://mood.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime type: `openclaw`
+- Runtime ID: `rt_mood_mnky`
+- Primary agent name: `MOOD MNKY`
+- Status: `online`
+- Uptime: `432000` seconds
+
+## Host inventory
+
+- Platform: Proxmox 9.1.11
+- Kernel: 7.0.2-3-pve
+- OS: Debian GNU/Linux 13 (trixie)
+- CPU: 13th Gen Intel Core i9-13900KS, 30 logical CPUs reported by lscpu
+- Memory: 125 GiB total, 77 GiB used, 48 GiB available
+
+### Networking
+
+- Management IP: 10.1.0.10/24 on vmbr0.10
+- vmbr0 on nic0 with VLAN awareness
+- vmbr1 on nic1
+- vmbr2 on nic2
+- Gateway host: https://mood.agents.moodmnky.com
+### Storage
+
+- sda 931.5G Samsung SSD 870 EVO 1TB
+- nvme1n1 931.5G Samsung SSD 980 PRO 1TB
+- nvme2n1 931.5G Samsung SSD 980 PRO 1TB
+- zvols present: zd0 256G, zd16 128G, zd32 128G, zd48 512G
+
+### Guests
+
+- VM 1000 mnky-command-center
+- VM 1015 coolify-mood-mnky
+- VM 1111 mnky-nextcloud
+- VM 1112 Palworld
+- CT 120 mnky-media-stack
+
+### Capture notes
+
+- Live SSH capture completed on 2026-05-20.
+
+## Agent profile
+
+## Capabilities
+
+- brand
+- product
+- commerce
+- content
+
+## Tools
+
+- brand_workflows
+- content_ops
+- store_sync
+
+## Models
+
+- `claude-3-sonnet` (anthropic, context 200000)
+
+## Memory
+
+- `brand_state` (redis, 0 docs)
+
+## Workflows
+
+- No workflows captured yet.
+
+## Cron jobs
+
+- No cron jobs captured yet.
+
+## Skills
+
+- [agentmail](/skills/agentmail)
+- [notion](/skills/notion)
+- [supabase](/skills/supabase)
+- [nextcloud-delivery](/skills/nextcloud-delivery)
+- [youtube-transcript-obsidian](/skills/youtube-transcript-obsidian)
+
+## Core files
+
+- [AGENTS.md](/agents/mood-mnky/core/AGENTS.md)
+- [SOUL.md](/agents/mood-mnky/core/SOUL.md)
+- [IDENTITY.md](/agents/mood-mnky/core/IDENTITY.md)
+- [USER.md](/agents/mood-mnky/core/USER.md)
+- [TOOLS.md](/agents/mood-mnky/core/TOOLS.md)
+- [HEARTBEAT.md](/agents/mood-mnky/core/HEARTBEAT.md)
+
+## Notes
+
+- This runtime is the brand/product/ecommerce layer in the fleet model.

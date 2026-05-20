@@ -1,0 +1,111 @@
+---
+title: MASTER MOOD
+description: Central orchestrator. Oversees MOOD MNKY, SAGE MNKY, CODE MNKY, and manages EDGE, CASA, and POKE.
+---
+
+# MASTER MOOD
+
+Central orchestrator agent responsible for managing the datacenter and the broader virtual ecosystem of agents and processes.
+
+## Identity
+
+- Hostname: `MNKY-HQ`
+- IP: `10.0.0.55`
+- Gateway host: `https://master.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime: `MNKY H.Q`
+- Runtime ID: `rt_mnky_hq`
+- Primary agent: `MASTER MOOD`
+- Team type: `orchestrator`
+- Role: `hub_orchestrator`
+- Status: `online`
+- Created at: `2024-01-01T00:00:00.000Z`
+
+## Networking
+
+- Primary endpoint: `http://10.0.0.55:18789`
+- Gateway host: `https://master.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime type: `openclaw`
+- Runtime ID: `rt_mnky_hq`
+- Primary agent name: `MASTER MOOD`
+- Status: `online`
+- Uptime: `864000` seconds
+
+## Host inventory
+
+- Platform: Proxmox 8.4.19
+- Kernel: 6.8.12-23-pve
+- OS: Debian GNU/Linux 12 (bookworm)
+- CPU: AMD Ryzen 9 7900X3D, 24 logical CPUs / 12 cores / 2 threads per core
+- Memory: 124 GiB total, 99 GiB used, 25 GiB available
+
+### Networking
+
+- Management IP: 101.0.0.100
+- Runtime endpoint: 10.0.0.55:18789
+- Gateway host: https://master.agents.moodmnky.com
+### Storage
+
+- sda 931.5G Samsung SSD 870 EVO 1TB
+- sdb 931.5G Samsung SSD 870 EVO 1TB
+
+### Capture notes
+
+- Live SSH capture completed on 2026-05-20.
+
+## Agent profile
+
+## Capabilities
+
+- orchestration
+- delegation
+- coordination
+- monitoring
+- secret_sharing
+
+## Tools
+
+- gateway_control
+- agent_invoke
+- host_config
+- process_orchestration
+
+## Models
+
+- `claude-3-sonnet` (anthropic, context 200000)
+- `gpt-4-turbo` (openai, context 128000)
+
+## Memory
+
+- `fleet_state` (redis, 8 docs)
+
+## Workflows
+
+- `Gateway Health Sweep` (cron, enabled)
+
+## Cron jobs
+
+- `Health Check` (*/5 * * * *, enabled)
+
+## Skills
+
+- [openclaw-hq-mcp-gateway-tools](/skills/openclaw-hq-mcp-gateway-tools)
+- [healthcheck](/skills/healthcheck)
+- [clawhub](/skills/clawhub)
+- [skill-creator](/skills/skill-creator)
+- [find-skills](/skills/find-skills)
+
+## Core files
+
+- [AGENTS.md](/agents/master-mood/core/AGENTS.md)
+- [SOUL.md](/agents/master-mood/core/SOUL.md)
+- [IDENTITY.md](/agents/master-mood/core/IDENTITY.md)
+- [USER.md](/agents/master-mood/core/USER.md)
+- [TOOLS.md](/agents/master-mood/core/TOOLS.md)
+- [HEARTBEAT.md](/agents/master-mood/core/HEARTBEAT.md)
+
+## Notes
+
+- This is the fleet hub and the primary coordination point.
+- The docs currently know the runtime, endpoint, uptime, and inventory surface, but not a full hardware bill of materials.

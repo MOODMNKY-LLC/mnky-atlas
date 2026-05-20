@@ -1,0 +1,110 @@
+---
+title: CASA MNKY
+description: Host-local managing agent.
+---
+
+# CASA MNKY
+
+Host-local managing agent.
+
+## Identity
+
+- Hostname: `CASA-MNKY`
+- IP: `10.4.0.34`
+- Gateway host: `https://casa.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime: `CASA MNKY`
+- Runtime ID: `rt_casa_mnky`
+- Primary agent: `CASA MNKY`
+- Team type: `extended`
+- Role: `extended_agent_host`
+- Status: `degraded`
+- Created at: `2024-02-10T00:00:00.000Z`
+
+## Networking
+
+- Primary endpoint: `http://10.4.0.34:18789`
+- Gateway host: `https://casa.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime type: `openclaw`
+- Runtime ID: `rt_casa_mnky`
+- Primary agent name: `CASA MNKY`
+- Status: `degraded`
+- Uptime: `259200` seconds
+
+## Host inventory
+
+- Platform: Proxmox 8.4.19
+- Kernel: 6.8.12-23-pve
+- OS: Debian GNU/Linux 12 (bookworm)
+- CPU: AMD Ryzen 5 4600G, 12 logical CPUs / 6 cores / 2 threads per core
+- Memory: 62 GiB total, 34 GiB used, 27 GiB available
+
+### Networking
+
+- Management IP: 10.4.0.10/24 on vmbr0.40
+- vmbr0 VLAN-aware on enp5s0
+- Access port enx8cae4cdda3ce for VLAN 40
+- Gateway host: https://casa.agents.moodmnky.com
+### Storage
+
+- zd0 512G ext4
+- nvme0n1 1.8T SHGP31-2000GM
+
+### Guests
+
+- VM 4001 casa-mnky-desktop
+
+### Capture notes
+
+- Live SSH capture completed on 2026-05-20.
+
+## Agent profile
+
+## Capabilities
+
+- home
+- control
+- automation
+
+## Tools
+
+- home_automation
+- local_control
+
+## Models
+
+- `claude-3-sonnet` (anthropic, context 200000)
+
+## Memory
+
+- `casa_state` (redis, 0 docs)
+
+## Workflows
+
+- No workflows captured yet.
+
+## Cron jobs
+
+- No cron jobs captured yet.
+
+## Skills
+
+- [google-home](/skills/google-home)
+- [openhue](/skills/openhue)
+- [sonoscli](/skills/sonoscli)
+- [weather](/skills/weather)
+- [healthcheck](/skills/healthcheck)
+
+## Core files
+
+- [AGENTS.md](/agents/casa-mnky/core/AGENTS.md)
+- [SOUL.md](/agents/casa-mnky/core/SOUL.md)
+- [IDENTITY.md](/agents/casa-mnky/core/IDENTITY.md)
+- [USER.md](/agents/casa-mnky/core/USER.md)
+- [TOOLS.md](/agents/casa-mnky/core/TOOLS.md)
+- [HEARTBEAT.md](/agents/casa-mnky/core/HEARTBEAT.md)
+
+## Notes
+
+- This runtime currently appears degraded in the source model.

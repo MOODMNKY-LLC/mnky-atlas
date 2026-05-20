@@ -26,16 +26,22 @@
     "directory": "card",
     "groups": [
       {
+        "group": "Agents",
+        "icon": "bot",
+        "expanded": true,
+        "pages": ["agents/index", "agents/catalog", "agents/harnesses", "agents/workspaces", "agents/master-mood", "agents/devops-mnky"]
+      },
+      {
         "group": "Overview",
         "icon": "compass",
         "expanded": true,
         "pages": ["overview/quickstart", "overview/architecture"]
       },
       {
-        "group": "Agents",
-        "icon": "bot",
+        "group": "Skills",
+        "icon": "book-open",
         "expanded": true,
-        "pages": ["agents/workspaces"]
+        "pages": ["skills/index"]
       },
       {
         "group": "Storage",

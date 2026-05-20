@@ -1,0 +1,730 @@
+{
+  "generatedAt": "2026-05-20T21:00:44.585Z",
+  "harness": "openclaw",
+  "agents": [
+    {
+      "name": "MASTER MOOD",
+      "slug": "master-mood",
+      "hostname": "MNKY-HQ",
+      "ip": "10.0.0.55",
+      "harness": "openclaw",
+      "runtimeId": "rt_mnky_hq",
+      "runtimeType": "openclaw",
+      "runtimeName": "MNKY H.Q",
+      "primaryAgentName": "MASTER MOOD",
+      "gatewayHost": "https://master.agents.moodmnky.com",
+      "role": "hub_orchestrator",
+      "teamType": "orchestrator",
+      "status": "online",
+      "description": "Central orchestrator. Oversees MOOD MNKY, SAGE MNKY, CODE MNKY, and manages EDGE, CASA, and POKE.",
+      "agentDescription": "Central orchestrator agent responsible for managing the datacenter and the broader virtual ecosystem of agents and processes.",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "uptimeSeconds": 864000,
+      "endpoint": "http://10.0.0.55:18789",
+      "skills": [
+        "openclaw-hq-mcp-gateway-tools",
+        "healthcheck",
+        "clawhub",
+        "skill-creator",
+        "find-skills"
+      ],
+      "tools": [
+        "gateway_control",
+        "agent_invoke",
+        "host_config",
+        "process_orchestration"
+      ],
+      "capabilities": [
+        "orchestration",
+        "delegation",
+        "coordination",
+        "monitoring",
+        "secret_sharing"
+      ],
+      "models": [
+        {
+          "name": "claude-3-sonnet",
+          "provider": "anthropic",
+          "contextLength": "200000"
+        },
+        {
+          "name": "gpt-4-turbo",
+          "provider": "openai",
+          "contextLength": "128000"
+        }
+      ],
+      "memoryStores": [
+        {
+          "name": "fleet_state",
+          "type": "redis",
+          "documentCount": 8
+        }
+      ],
+      "workflows": [
+        {
+          "name": "Gateway Health Sweep",
+          "trigger": "cron",
+          "enabled": true
+        }
+      ],
+      "cronJobs": [
+        {
+          "name": "Health Check",
+          "schedule": "*/5 * * * *",
+          "enabled": true
+        }
+      ],
+      "hardware": {
+        "cpu": "Not yet captured in current docs",
+        "memory": "Not yet captured in current docs",
+        "storage": "Not yet captured in current docs",
+        "gpu": "Not yet captured in current docs",
+        "os": "OpenClaw host with runtime inventory captured in docs, hardware capture pending"
+      },
+      "notes": [
+        "This is the fleet hub and the primary coordination point.",
+        "The docs currently know the runtime, endpoint, uptime, and inventory surface, but not a full hardware bill of materials."
+      ],
+      "hostInventory": {
+        "platform": "Proxmox 8.4.19",
+        "kernel": "6.8.12-23-pve",
+        "os": "Debian GNU/Linux 12 (bookworm)",
+        "cpu": "AMD Ryzen 9 7900X3D, 24 logical CPUs / 12 cores / 2 threads per core",
+        "memory": "124 GiB total, 99 GiB used, 25 GiB available",
+        "storage": [
+          "sda 931.5G Samsung SSD 870 EVO 1TB",
+          "sdb 931.5G Samsung SSD 870 EVO 1TB"
+        ],
+        "networking": [
+          "Management IP: 101.0.0.100",
+          "Runtime endpoint: 10.0.0.55:18789",
+          "Gateway host: https://master.agents.moodmnky.com"
+        ],
+        "guests": [],
+        "notes": [
+          "Live SSH capture completed on 2026-05-20."
+        ]
+      }
+    },
+    {
+      "name": "DEVOPS MNKY",
+      "slug": "devops-mnky",
+      "hostname": "DEVOPS-MNKY",
+      "ip": "10.0.0.113",
+      "harness": "openclaw",
+      "runtimeId": "rt_devops_mnky",
+      "runtimeType": "openclaw",
+      "runtimeName": "DEVOPS MNKY",
+      "primaryAgentName": "DEVOPS MNKY",
+      "gatewayHost": "https://devops.agents.moodmnky.com",
+      "role": "personal_workstation_assistant",
+      "teamType": "personal",
+      "status": "online",
+      "description": "Simeon's personal day-to-day virtual assistant on the home/workstation computer.",
+      "agentDescription": "Simeon's personal day-to-day virtual assistant. Works alongside Simeon directly while MASTER MOOD manages the datacenter.",
+      "createdAt": "2024-03-05T00:00:00.000Z",
+      "uptimeSeconds": 86400,
+      "endpoint": "http://10.0.0.113:18789",
+      "skills": [
+        "healthcheck",
+        "tmux",
+        "github",
+        "node-inspect-debugger",
+        "taskflow",
+        "self-improvement"
+      ],
+      "tools": [
+        "calendar",
+        "notes",
+        "local_shell",
+        "browser_control"
+      ],
+      "capabilities": [
+        "daily_tasks",
+        "scheduling",
+        "local_automation",
+        "personal_assistant"
+      ],
+      "models": [
+        {
+          "name": "claude-3-sonnet",
+          "provider": "anthropic",
+          "contextLength": "200000"
+        }
+      ],
+      "memoryStores": [
+        {
+          "name": "personal_context",
+          "type": "sqlite",
+          "documentCount": 156
+        }
+      ],
+      "workflows": [],
+      "cronJobs": [],
+      "hardware": {
+        "cpu": "Not yet captured in current docs",
+        "memory": "Not yet captured in current docs",
+        "storage": "Not yet captured in current docs",
+        "gpu": "Not yet captured in current docs",
+        "os": "OpenClaw workstation host; detailed hardware inventory pending"
+      },
+      "notes": [
+        "This is the operator-facing assistant on the workstation layer.",
+        "The docs know the runtime endpoint and inventory surface, but not the host hardware bill of materials yet."
+      ],
+      "hostInventory": {
+        "platform": "Ubuntu 24.04.4 LTS on WSL2",
+        "kernel": "6.6.114.1-microsoft-standard-WSL2",
+        "os": "Ubuntu 24.04.4 LTS",
+        "cpu": "12th Gen Intel Core i9-12900K, 24 logical CPUs / 12 cores / 2 threads per core",
+        "memory": "62 GiB total, 7.6 GiB used, 55 GiB available",
+        "storage": [
+          "loop0 827.2M loop",
+          "loop1 716.9M loop",
+          "sda 364.8M Virtual Disk",
+          "sdb 144.5M Virtual Disk",
+          "sdc 16G Virtual Disk",
+          "sdd 1T Virtual Disk",
+          "sdf 1T Virtual Disk",
+          "sdg 1T Virtual Disk",
+          "sdh 151M Virtual Disk"
+        ],
+        "networking": [
+          "Workstation/runtime endpoint: 10.0.0.113:18789",
+          "WSL2 guest backed by the Windows host rather than a Proxmox bridge",
+          "Gateway host: https://devops.agents.moodmnky.com"
+        ],
+        "guests": [],
+        "notes": [
+          "Live local capture completed on 2026-05-20."
+        ]
+      }
+    },
+    {
+      "name": "MOOD MNKY",
+      "slug": "mood-mnky",
+      "hostname": "MOOD-MNKY",
+      "ip": "10.1.0.111",
+      "harness": "openclaw",
+      "runtimeId": "rt_mood_mnky",
+      "runtimeType": "openclaw",
+      "runtimeName": "MOOD MNKY",
+      "primaryAgentName": "MOOD MNKY",
+      "gatewayHost": "https://mood.agents.moodmnky.com",
+      "role": "core_agent_host",
+      "teamType": "core",
+      "status": "online",
+      "description": "Brand/product/ecommerce-oriented agent host.",
+      "agentDescription": "Brand, product, and ecommerce agent host.",
+      "createdAt": "2024-01-15T00:00:00.000Z",
+      "uptimeSeconds": 432000,
+      "endpoint": "http://10.1.0.111:18789",
+      "skills": [
+        "agentmail",
+        "notion",
+        "supabase",
+        "nextcloud-delivery",
+        "youtube-transcript-obsidian"
+      ],
+      "tools": [
+        "brand_workflows",
+        "content_ops",
+        "store_sync"
+      ],
+      "capabilities": [
+        "brand",
+        "product",
+        "commerce",
+        "content"
+      ],
+      "models": [
+        {
+          "name": "claude-3-sonnet",
+          "provider": "anthropic",
+          "contextLength": "200000"
+        }
+      ],
+      "memoryStores": [
+        {
+          "name": "brand_state",
+          "type": "redis",
+          "documentCount": 0
+        }
+      ],
+      "workflows": [],
+      "cronJobs": [],
+      "hardware": {
+        "cpu": "Not yet captured in current docs",
+        "memory": "Not yet captured in current docs",
+        "storage": "Not yet captured in current docs",
+        "gpu": "Not yet captured in current docs",
+        "os": "OpenClaw runtime host; hardware capture pending"
+      },
+      "notes": [
+        "This runtime is the brand/product/ecommerce layer in the fleet model."
+      ],
+      "hostInventory": {
+        "platform": "Proxmox 9.1.11",
+        "kernel": "7.0.2-3-pve",
+        "os": "Debian GNU/Linux 13 (trixie)",
+        "cpu": "13th Gen Intel Core i9-13900KS, 30 logical CPUs reported by lscpu",
+        "memory": "125 GiB total, 77 GiB used, 48 GiB available",
+        "storage": [
+          "sda 931.5G Samsung SSD 870 EVO 1TB",
+          "nvme1n1 931.5G Samsung SSD 980 PRO 1TB",
+          "nvme2n1 931.5G Samsung SSD 980 PRO 1TB",
+          "zvols present: zd0 256G, zd16 128G, zd32 128G, zd48 512G"
+        ],
+        "networking": [
+          "Management IP: 10.1.0.10/24 on vmbr0.10",
+          "vmbr0 on nic0 with VLAN awareness",
+          "vmbr1 on nic1",
+          "vmbr2 on nic2",
+          "Gateway host: https://mood.agents.moodmnky.com"
+        ],
+        "guests": [
+          "VM 1000 mnky-command-center",
+          "VM 1015 coolify-mood-mnky",
+          "VM 1111 mnky-nextcloud",
+          "VM 1112 Palworld",
+          "CT 120 mnky-media-stack"
+        ],
+        "notes": [
+          "Live SSH capture completed on 2026-05-20."
+        ]
+      }
+    },
+    {
+      "name": "SAGE MNKY",
+      "slug": "sage-mnky",
+      "hostname": "SAGE-MNKY",
+      "ip": "10.2.0.32",
+      "harness": "openclaw",
+      "runtimeId": "rt_sage_mnky",
+      "runtimeType": "openclaw",
+      "runtimeName": "SAGE MNKY",
+      "primaryAgentName": "SAGE MNKY",
+      "gatewayHost": "https://sage.agents.moodmnky.com",
+      "role": "core_agent_host",
+      "teamType": "core",
+      "status": "online",
+      "description": "Reflection, community, and research-oriented agent host.",
+      "agentDescription": "Reflection, community, and research-oriented agent host.",
+      "createdAt": "2024-01-20T00:00:00.000Z",
+      "uptimeSeconds": 518400,
+      "endpoint": "http://10.2.0.32:18789",
+      "skills": [
+        "summarize",
+        "obsidian",
+        "notion",
+        "weather",
+        "blogwatcher"
+      ],
+      "tools": [
+        "research",
+        "note_capture",
+        "summarization"
+      ],
+      "capabilities": [
+        "reflection",
+        "community",
+        "research"
+      ],
+      "models": [
+        {
+          "name": "claude-3-sonnet",
+          "provider": "anthropic",
+          "contextLength": "200000"
+        }
+      ],
+      "memoryStores": [
+        {
+          "name": "research_context",
+          "type": "redis",
+          "documentCount": 0
+        }
+      ],
+      "workflows": [],
+      "cronJobs": [],
+      "hardware": {
+        "cpu": "Not yet captured in current docs",
+        "memory": "Not yet captured in current docs",
+        "storage": "Not yet captured in current docs",
+        "gpu": "Not yet captured in current docs",
+        "os": "OpenClaw runtime host; hardware capture pending"
+      },
+      "notes": [
+        "Research and reflection are the emphasis here."
+      ],
+      "hostInventory": {
+        "platform": "Proxmox 8.4.19",
+        "kernel": "6.8.12-23-pve",
+        "os": "Debian GNU/Linux 12 (bookworm)",
+        "cpu": "AMD Ryzen 7 5700G, 16 logical CPUs / 8 cores / 2 threads per core",
+        "memory": "62 GiB total, 59 GiB used, 3.7 GiB available",
+        "storage": [
+          "sda 465.8G Samsung SSD 840 EVO 500GB",
+          "sdb 3.6T Samsung SSD 870 EVO 4TB",
+          "nvme0n1 1.8T T-FORCE TM8FP7002T",
+          "nvme1n1 1.8T T-FORCE TM8FP7002T",
+          "zvols present: zd0 512G, zd16 256G"
+        ],
+        "networking": [
+          "Management IP: 10.2.0.10/24 on vmbr0.20",
+          "vmbr0 on enx8cae4cdda391",
+          "vmbr0.30 present but manual/unassigned",
+          "Gateway host: https://sage.agents.moodmnky.com"
+        ],
+        "guests": [
+          "VM 2001 sage-mnky-desktop",
+          "VM 2019 POKE-MNKY",
+          "CT 205 mnky-gitlab"
+        ],
+        "notes": [
+          "Live SSH capture completed on 2026-05-20."
+        ]
+      }
+    },
+    {
+      "name": "CODE MNKY",
+      "slug": "code-mnky",
+      "hostname": "CODE-MNKY",
+      "ip": "10.3.0.50",
+      "harness": "openclaw",
+      "runtimeId": "rt_code_mnky",
+      "runtimeType": "openclaw",
+      "runtimeName": "CODE MNKY",
+      "primaryAgentName": "CODE MNKY",
+      "gatewayHost": "https://code.agents.moodmnky.com",
+      "role": "core_agent_host",
+      "teamType": "core",
+      "status": "online",
+      "description": "Development, automation, and DevOps-oriented agent host.",
+      "agentDescription": "Development, automation, and DevOps-oriented agent host.",
+      "createdAt": "2024-02-01T00:00:00.000Z",
+      "uptimeSeconds": 604800,
+      "endpoint": "http://10.3.0.50:18789",
+      "skills": [
+        "github",
+        "tmux",
+        "node-inspect-debugger",
+        "supabase",
+        "openclaw-hq-mcp-gateway-tools"
+      ],
+      "tools": [
+        "code_review",
+        "git_ops",
+        "shell",
+        "browser_control"
+      ],
+      "capabilities": [
+        "development",
+        "automation",
+        "devops"
+      ],
+      "models": [
+        {
+          "name": "claude-3-sonnet",
+          "provider": "anthropic",
+          "contextLength": "200000"
+        }
+      ],
+      "memoryStores": [
+        {
+          "name": "code_state",
+          "type": "redis",
+          "documentCount": 0
+        }
+      ],
+      "workflows": [],
+      "cronJobs": [],
+      "hardware": {
+        "cpu": "Not yet captured in current docs",
+        "memory": "Not yet captured in current docs",
+        "storage": "Not yet captured in current docs",
+        "gpu": "Not yet captured in current docs",
+        "os": "OpenClaw runtime host; hardware capture pending"
+      },
+      "notes": [
+        "This runtime is the code and operations layer in the fleet model."
+      ],
+      "hostInventory": {
+        "platform": "Proxmox 8.4.19",
+        "kernel": "6.8.12-23-pve",
+        "os": "Debian GNU/Linux 12 (bookworm)",
+        "cpu": "AMD Ryzen 5 4600G, 12 logical CPUs / 6 cores / 2 threads per core",
+        "memory": "125 GiB total, 98 GiB used, 26 GiB available",
+        "storage": [
+          "sda 465.8G WDC WD5001AALS-00L3B2",
+          "sdb 476.9G SATA SSD",
+          "zvols present: zd0 256G, zd16 64G, zd32 1T, zd48 512G, zd64 128G"
+        ],
+        "networking": [
+          "Management IP: 10.3.0.10/24 on vmbr0.30",
+          "vmbr0 VLAN-aware trunk on enp5s0",
+          "vmbr1 IPMI LAN 10.199.0.2/24 on enp7s0",
+          "Gateway host: https://code.agents.moodmnky.com"
+        ],
+        "guests": [
+          "VM 3000 mnky-accelerator",
+          "VM 3002 obsidian-mnky",
+          "VM 3005 code-mnky-agent",
+          "VM 3015 mnky-agent-mail",
+          "VM 3030 mnky-flowise-prod",
+          "VM 3055 mnky-supabase-prod",
+          "VM 3056 mnky-n8n-prod"
+        ],
+        "notes": [
+          "Live SSH capture completed on 2026-05-20. Memory pressure is still the watch item."
+        ]
+      }
+    },
+    {
+      "name": "CASA MNKY",
+      "slug": "casa-mnky",
+      "hostname": "CASA-MNKY",
+      "ip": "10.4.0.34",
+      "harness": "openclaw",
+      "runtimeId": "rt_casa_mnky",
+      "runtimeType": "openclaw",
+      "runtimeName": "CASA MNKY",
+      "primaryAgentName": "CASA MNKY",
+      "gatewayHost": "https://casa.agents.moodmnky.com",
+      "role": "extended_agent_host",
+      "teamType": "extended",
+      "status": "degraded",
+      "description": "Host-local managing agent.",
+      "agentDescription": "Host-local managing agent.",
+      "createdAt": "2024-02-10T00:00:00.000Z",
+      "uptimeSeconds": 259200,
+      "endpoint": "http://10.4.0.34:18789",
+      "skills": [
+        "google-home",
+        "openhue",
+        "sonoscli",
+        "weather",
+        "healthcheck"
+      ],
+      "tools": [
+        "home_automation",
+        "local_control"
+      ],
+      "capabilities": [
+        "home",
+        "control",
+        "automation"
+      ],
+      "models": [
+        {
+          "name": "claude-3-sonnet",
+          "provider": "anthropic",
+          "contextLength": "200000"
+        }
+      ],
+      "memoryStores": [
+        {
+          "name": "casa_state",
+          "type": "redis",
+          "documentCount": 0
+        }
+      ],
+      "workflows": [],
+      "cronJobs": [],
+      "hardware": {
+        "cpu": "Not yet captured in current docs",
+        "memory": "Not yet captured in current docs",
+        "storage": "Not yet captured in current docs",
+        "gpu": "Not yet captured in current docs",
+        "os": "OpenClaw runtime host; hardware capture pending"
+      },
+      "notes": [
+        "This runtime currently appears degraded in the source model."
+      ],
+      "hostInventory": {
+        "platform": "Proxmox 8.4.19",
+        "kernel": "6.8.12-23-pve",
+        "os": "Debian GNU/Linux 12 (bookworm)",
+        "cpu": "AMD Ryzen 5 4600G, 12 logical CPUs / 6 cores / 2 threads per core",
+        "memory": "62 GiB total, 34 GiB used, 27 GiB available",
+        "storage": [
+          "zd0 512G ext4",
+          "nvme0n1 1.8T SHGP31-2000GM"
+        ],
+        "networking": [
+          "Management IP: 10.4.0.10/24 on vmbr0.40",
+          "vmbr0 VLAN-aware on enp5s0",
+          "Access port enx8cae4cdda3ce for VLAN 40",
+          "Gateway host: https://casa.agents.moodmnky.com"
+        ],
+        "guests": [
+          "VM 4001 casa-mnky-desktop"
+        ],
+        "notes": [
+          "Live SSH capture completed on 2026-05-20."
+        ]
+      }
+    },
+    {
+      "name": "EDGE MNKY",
+      "slug": "edge-mnky",
+      "hostname": "EDGE-MNKY",
+      "ip": "10.0.0.50",
+      "harness": "openclaw",
+      "runtimeId": "rt_edge_mnky",
+      "runtimeType": "openclaw",
+      "runtimeName": "EDGE MNKY",
+      "primaryAgentName": "EDGE MNKY",
+      "gatewayHost": "https://edge.agents.moodmnky.com",
+      "role": "remote_edge_agent_host",
+      "teamType": "edge",
+      "status": "online",
+      "description": "Reachable remotely over NetBird. Treat remote NetBird address as alternate endpoint.",
+      "agentDescription": "Remote edge agent host with LAN and NetBird reachability.",
+      "createdAt": "2024-02-15T00:00:00.000Z",
+      "uptimeSeconds": 172800,
+      "endpoint": "http://10.0.0.50:18789",
+      "alternateEndpoint": "http://100.91.186.219:18789",
+      "skills": [
+        "node-connect",
+        "healthcheck",
+        "tmux",
+        "canvas",
+        "github"
+      ],
+      "tools": [
+        "edge_control",
+        "remote_shell"
+      ],
+      "capabilities": [
+        "remote_access",
+        "edge",
+        "fallback_connectivity"
+      ],
+      "models": [
+        {
+          "name": "gpt-4",
+          "provider": "openai",
+          "contextLength": "128000"
+        },
+        {
+          "name": "claude-3",
+          "provider": "anthropic",
+          "contextLength": "200000"
+        }
+      ],
+      "memoryStores": [
+        {
+          "name": "edge_state",
+          "type": "redis",
+          "documentCount": 0
+        }
+      ],
+      "workflows": [],
+      "cronJobs": [],
+      "hardware": {
+        "cpu": "Not yet captured in current docs",
+        "memory": "Not yet captured in current docs",
+        "storage": "Not yet captured in current docs",
+        "gpu": "Not yet captured in current docs",
+        "os": "OpenClaw runtime host; hardware capture pending"
+      },
+      "notes": [
+        "This runtime is modeled as the remote/edge entry point."
+      ],
+      "hostInventory": {
+        "platform": "Proxmox 9.1.11",
+        "kernel": "7.0.2-3-pve",
+        "os": "Debian GNU/Linux 13 (trixie)",
+        "cpu": "Intel Core i7-6700HQ, 8 logical CPUs / 4 cores / 2 threads per core",
+        "memory": "15 GiB total, 9.4 GiB used, 6.1 GiB available",
+        "storage": [
+          "sda 119.2G SAMSUNG MZNLF128HCHP-00004",
+          "sdb 931.5G HGST HTS721010A9E630",
+          "sr0 1024M TSSTcorp CDDVDW SU-228GB"
+        ],
+        "networking": [
+          "Static 10.0.0.157/24 on vmbr0 with gateway 10.0.0.1",
+          "VLAN-aware bridge with VLAN 50 allowed",
+          "vmbr0.50 management/edge IP 10.5.0.10/24",
+          "Gateway host: https://edge.agents.moodmnky.com"
+        ],
+        "guests": [
+          "VM 5000 Edge-Agent"
+        ],
+        "notes": [
+          "Live SSH capture completed on 2026-05-20."
+        ]
+      }
+    },
+    {
+      "name": "POKE MNKY",
+      "slug": "poke-mnky",
+      "hostname": "POKE-MNKY",
+      "ip": "10.3.0.100",
+      "harness": "openclaw",
+      "runtimeId": "rt_poke_mnky",
+      "runtimeType": "openclaw",
+      "runtimeName": "POKE MNKY",
+      "primaryAgentName": "POKE MNKY",
+      "gatewayHost": "https://poke.agents.moodmnky.com",
+      "role": "specialized_agent_host",
+      "teamType": "specialized",
+      "status": "offline",
+      "description": "Pokemon/family/kid-friendly specialized agent host.",
+      "agentDescription": "Pokemon/family/kid-friendly specialized agent host.",
+      "createdAt": "2024-03-01T00:00:00.000Z",
+      "uptimeSeconds": null,
+      "endpoint": "http://10.3.0.100:18789",
+      "skills": [
+        "gog",
+        "discord",
+        "imsg",
+        "meme-maker",
+        "weather"
+      ],
+      "tools": [
+        "pokemon_api",
+        "trivia",
+        "safe_search"
+      ],
+      "capabilities": [
+        "games",
+        "education",
+        "family_safe",
+        "entertainment"
+      ],
+      "models": [],
+      "memoryStores": [],
+      "workflows": [],
+      "cronJobs": [],
+      "hardware": {
+        "cpu": "Not yet captured in current docs",
+        "memory": "Not yet captured in current docs",
+        "storage": "Not yet captured in current docs",
+        "gpu": "Not yet captured in current docs",
+        "os": "OpenClaw runtime host; hardware capture pending"
+      },
+      "notes": [
+        "This runtime is offline in the current source model."
+      ],
+      "hostInventory": {
+        "platform": "Capture pending",
+        "kernel": "Capture pending",
+        "os": "Capture pending",
+        "cpu": "Capture pending",
+        "memory": "Capture pending",
+        "storage": [
+          "Capture pending"
+        ],
+        "networking": [
+          "Gateway host: https://poke.agents.moodmnky.com",
+          "Runtime endpoint: http://10.3.0.100:18789"
+        ],
+        "guests": [],
+        "notes": [
+          "No direct live host inventory was captured for this offline/specialized node in the current pass."
+        ]
+      }
+    }
+  ]
+}

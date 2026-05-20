@@ -1,0 +1,119 @@
+---
+title: CODE MNKY
+description: Development, automation, and DevOps-oriented agent host.
+---
+
+# CODE MNKY
+
+Development, automation, and DevOps-oriented agent host.
+
+## Identity
+
+- Hostname: `CODE-MNKY`
+- IP: `10.3.0.50`
+- Gateway host: `https://code.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime: `CODE MNKY`
+- Runtime ID: `rt_code_mnky`
+- Primary agent: `CODE MNKY`
+- Team type: `core`
+- Role: `core_agent_host`
+- Status: `online`
+- Created at: `2024-02-01T00:00:00.000Z`
+
+## Networking
+
+- Primary endpoint: `http://10.3.0.50:18789`
+- Gateway host: `https://code.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime type: `openclaw`
+- Runtime ID: `rt_code_mnky`
+- Primary agent name: `CODE MNKY`
+- Status: `online`
+- Uptime: `604800` seconds
+
+## Host inventory
+
+- Platform: Proxmox 8.4.19
+- Kernel: 6.8.12-23-pve
+- OS: Debian GNU/Linux 12 (bookworm)
+- CPU: AMD Ryzen 5 4600G, 12 logical CPUs / 6 cores / 2 threads per core
+- Memory: 125 GiB total, 98 GiB used, 26 GiB available
+
+### Networking
+
+- Management IP: 10.3.0.10/24 on vmbr0.30
+- vmbr0 VLAN-aware trunk on enp5s0
+- vmbr1 IPMI LAN 10.199.0.2/24 on enp7s0
+- Gateway host: https://code.agents.moodmnky.com
+### Storage
+
+- sda 465.8G WDC WD5001AALS-00L3B2
+- sdb 476.9G SATA SSD
+- zvols present: zd0 256G, zd16 64G, zd32 1T, zd48 512G, zd64 128G
+
+### Guests
+
+- VM 3000 mnky-accelerator
+- VM 3002 obsidian-mnky
+- VM 3005 code-mnky-agent
+- VM 3015 mnky-agent-mail
+- VM 3030 mnky-flowise-prod
+- VM 3055 mnky-supabase-prod
+- VM 3056 mnky-n8n-prod
+
+### Capture notes
+
+- Live SSH capture completed on 2026-05-20. Memory pressure is still the watch item.
+
+## Agent profile
+
+## Capabilities
+
+- development
+- automation
+- devops
+
+## Tools
+
+- code_review
+- git_ops
+- shell
+- browser_control
+
+## Models
+
+- `claude-3-sonnet` (anthropic, context 200000)
+
+## Memory
+
+- `code_state` (redis, 0 docs)
+
+## Workflows
+
+- No workflows captured yet.
+
+## Cron jobs
+
+- No cron jobs captured yet.
+
+## Skills
+
+- [github](/skills/github)
+- [tmux](/skills/tmux)
+- [node-inspect-debugger](/skills/node-inspect-debugger)
+- [supabase](/skills/supabase)
+- [openclaw-hq-mcp-gateway-tools](/skills/openclaw-hq-mcp-gateway-tools)
+
+## Core files
+
+- [AGENTS.md](/agents/code-mnky/core/AGENTS.md)
+- [SOUL.md](/agents/code-mnky/core/SOUL.md)
+- [IDENTITY.md](/agents/code-mnky/core/IDENTITY.md)
+- [USER.md](/agents/code-mnky/core/USER.md)
+- [TOOLS.md](/agents/code-mnky/core/TOOLS.md)
+- [HEARTBEAT.md](/agents/code-mnky/core/HEARTBEAT.md)
+
+## Notes
+
+- This runtime is the code and operations layer in the fleet model.

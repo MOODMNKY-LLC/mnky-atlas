@@ -1,0 +1,117 @@
+---
+title: DEVOPS MNKY
+description: Simeon's personal day-to-day virtual assistant on the home/workstation computer.
+---
+
+# DEVOPS MNKY
+
+Simeon's personal day-to-day virtual assistant. Works alongside Simeon directly while MASTER MOOD manages the datacenter.
+
+## Identity
+
+- Hostname: `DEVOPS-MNKY`
+- IP: `10.0.0.113`
+- Gateway host: `https://devops.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime: `DEVOPS MNKY`
+- Runtime ID: `rt_devops_mnky`
+- Primary agent: `DEVOPS MNKY`
+- Team type: `personal`
+- Role: `personal_workstation_assistant`
+- Status: `online`
+- Created at: `2024-03-05T00:00:00.000Z`
+
+## Networking
+
+- Primary endpoint: `http://10.0.0.113:18789`
+- Gateway host: `https://devops.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime type: `openclaw`
+- Runtime ID: `rt_devops_mnky`
+- Primary agent name: `DEVOPS MNKY`
+- Status: `online`
+- Uptime: `86400` seconds
+
+## Host inventory
+
+- Platform: Ubuntu 24.04.4 LTS on WSL2
+- Kernel: 6.6.114.1-microsoft-standard-WSL2
+- OS: Ubuntu 24.04.4 LTS
+- CPU: 12th Gen Intel Core i9-12900K, 24 logical CPUs / 12 cores / 2 threads per core
+- Memory: 62 GiB total, 7.6 GiB used, 55 GiB available
+
+### Networking
+
+- Workstation/runtime endpoint: 10.0.0.113:18789
+- WSL2 guest backed by the Windows host rather than a Proxmox bridge
+- Gateway host: https://devops.agents.moodmnky.com
+### Storage
+
+- loop0 827.2M loop
+- loop1 716.9M loop
+- sda 364.8M Virtual Disk
+- sdb 144.5M Virtual Disk
+- sdc 16G Virtual Disk
+- sdd 1T Virtual Disk
+- sdf 1T Virtual Disk
+- sdg 1T Virtual Disk
+- sdh 151M Virtual Disk
+
+### Capture notes
+
+- Live local capture completed on 2026-05-20.
+
+## Agent profile
+
+## Capabilities
+
+- daily_tasks
+- scheduling
+- local_automation
+- personal_assistant
+
+## Tools
+
+- calendar
+- notes
+- local_shell
+- browser_control
+
+## Models
+
+- `claude-3-sonnet` (anthropic, context 200000)
+
+## Memory
+
+- `personal_context` (sqlite, 156 docs)
+
+## Workflows
+
+- No workflows captured yet.
+
+## Cron jobs
+
+- No cron jobs captured yet.
+
+## Skills
+
+- [healthcheck](/skills/healthcheck)
+- [tmux](/skills/tmux)
+- [github](/skills/github)
+- [node-inspect-debugger](/skills/node-inspect-debugger)
+- [taskflow](/skills/taskflow)
+- [self-improvement](/skills/self-improvement)
+
+## Core files
+
+- [AGENTS.md](/agents/devops-mnky/core/AGENTS.md)
+- [SOUL.md](/agents/devops-mnky/core/SOUL.md)
+- [IDENTITY.md](/agents/devops-mnky/core/IDENTITY.md)
+- [USER.md](/agents/devops-mnky/core/USER.md)
+- [TOOLS.md](/agents/devops-mnky/core/TOOLS.md)
+- [HEARTBEAT.md](/agents/devops-mnky/core/HEARTBEAT.md)
+
+## Notes
+
+- This is the operator-facing assistant on the workstation layer.
+- The docs know the runtime endpoint and inventory surface, but not the host hardware bill of materials yet.

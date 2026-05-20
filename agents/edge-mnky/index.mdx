@@ -1,0 +1,113 @@
+---
+title: EDGE MNKY
+description: Reachable remotely over NetBird. Treat remote NetBird address as alternate endpoint.
+---
+
+# EDGE MNKY
+
+Remote edge agent host with LAN and NetBird reachability.
+
+## Identity
+
+- Hostname: `EDGE-MNKY`
+- IP: `10.0.0.50`
+- Gateway host: `https://edge.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime: `EDGE MNKY`
+- Runtime ID: `rt_edge_mnky`
+- Primary agent: `EDGE MNKY`
+- Team type: `edge`
+- Role: `remote_edge_agent_host`
+- Status: `online`
+- Created at: `2024-02-15T00:00:00.000Z`
+
+## Networking
+
+- Primary endpoint: `http://10.0.0.50:18789`
+- Alternate endpoint: `http://100.91.186.219:18789`
+- Gateway host: `https://edge.agents.moodmnky.com`
+- Harness: `openclaw`
+- Runtime type: `openclaw`
+- Runtime ID: `rt_edge_mnky`
+- Primary agent name: `EDGE MNKY`
+- Status: `online`
+- Uptime: `172800` seconds
+
+## Host inventory
+
+- Platform: Proxmox 9.1.11
+- Kernel: 7.0.2-3-pve
+- OS: Debian GNU/Linux 13 (trixie)
+- CPU: Intel Core i7-6700HQ, 8 logical CPUs / 4 cores / 2 threads per core
+- Memory: 15 GiB total, 9.4 GiB used, 6.1 GiB available
+
+### Networking
+
+- Static 10.0.0.157/24 on vmbr0 with gateway 10.0.0.1
+- VLAN-aware bridge with VLAN 50 allowed
+- vmbr0.50 management/edge IP 10.5.0.10/24
+- Gateway host: https://edge.agents.moodmnky.com
+### Storage
+
+- sda 119.2G SAMSUNG MZNLF128HCHP-00004
+- sdb 931.5G HGST HTS721010A9E630
+- sr0 1024M TSSTcorp CDDVDW SU-228GB
+
+### Guests
+
+- VM 5000 Edge-Agent
+
+### Capture notes
+
+- Live SSH capture completed on 2026-05-20.
+
+## Agent profile
+
+## Capabilities
+
+- remote_access
+- edge
+- fallback_connectivity
+
+## Tools
+
+- edge_control
+- remote_shell
+
+## Models
+
+- `gpt-4` (openai, context 128000)
+- `claude-3` (anthropic, context 200000)
+
+## Memory
+
+- `edge_state` (redis, 0 docs)
+
+## Workflows
+
+- No workflows captured yet.
+
+## Cron jobs
+
+- No cron jobs captured yet.
+
+## Skills
+
+- [node-connect](/skills/node-connect)
+- [healthcheck](/skills/healthcheck)
+- [tmux](/skills/tmux)
+- [canvas](/skills/canvas)
+- [github](/skills/github)
+
+## Core files
+
+- [AGENTS.md](/agents/edge-mnky/core/AGENTS.md)
+- [SOUL.md](/agents/edge-mnky/core/SOUL.md)
+- [IDENTITY.md](/agents/edge-mnky/core/IDENTITY.md)
+- [USER.md](/agents/edge-mnky/core/USER.md)
+- [TOOLS.md](/agents/edge-mnky/core/TOOLS.md)
+- [HEARTBEAT.md](/agents/edge-mnky/core/HEARTBEAT.md)
+
+## Notes
+
+- This runtime is modeled as the remote/edge entry point.

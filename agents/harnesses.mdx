@@ -1,0 +1,27 @@
+---
+title: Harnesses
+description: How the agent harness layer is modeled in this docs set.
+---
+
+# Harnesses
+
+The harness is the runtime layer that sits under the agent identity.
+
+## Current harness model
+
+- `openclaw` is the canonical harness for the current MNKY agent fleet.
+- The harness is where orchestration, tool routing, session state, and live execution happen.
+- The agent page should describe the harness, but not bury the runtime details in prose.
+
+## Harness fields to document
+
+- runtime type
+- runtime ID
+- primary agent name
+- LAN endpoint
+- alternate endpoint, if any
+- status
+- uptime
+- model inventory
+- tool inventory
+- skill inventory
